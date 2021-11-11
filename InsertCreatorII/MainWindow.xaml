@@ -1,0 +1,29 @@
+﻿<Window x:Class="InsertCreatorII.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InsertCreatorII"
+        mc:Ignorable="d"
+        Title="Insert Statement Creator" Height="450" Width="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label>Paste your SQL statement in the box below</Label>
+            <ComboBox Grid.Column="1" x:Name="ConnectionsComboBox" Margin="5,1,5,1"></ComboBox>
+            <ComboBox Grid.Column="2" x:Name="DatabasesComboBox" Margin="5,1,5,1"></ComboBox>
+        </Grid>
+        
+        <TextBox x:Name="SqlStatementTextBox" DockPanel.Dock="Top" TextWrapping="Wrap" AcceptsReturn="True"
+                 MinLines="8" Margin="10"></TextBox>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+            <Button x:Name="CreateInsertButton" Width="100" Height="30" Click="CreateInsertButton_Click">Create Inserts</Button>
+        </StackPanel>
+        <TextBox x:Name="InsertStatementsTextBox" DockPanel.Dock="Bottom" TextWrapping="Wrap" AcceptsReturn="True"
+                 MinLines="8" Margin="10"></TextBox>
+    </DockPanel>
+</Window>
